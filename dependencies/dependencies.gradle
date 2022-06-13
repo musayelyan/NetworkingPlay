@@ -1,0 +1,32 @@
+ext{
+
+    versionName = '1.0'
+    versionCode = 1
+
+    versionOfMinSdk = 21
+    versionOfTargetSdk = 32
+    versionOfCompileSdk = 32
+    versionOfJvmTarget = '1.8'
+
+    versions=[
+            "gradleVersion" : '7.0.4',
+            "kotlinGradlePluginVersion" : '1.5.20',
+
+            //Network
+            "retrofitVersion": '2.9.0',
+            "okhttpVersion": '4.9.0'
+    ]
+
+    classPathDependencies = [
+            gradle : "com.android.tools.build:gradle:${versions.gradleVersion}",
+            kotlinGradlePlugin : "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlinGradlePluginVersion}"
+    ]
+
+    networkDependencies = [
+            retrofit             : "com.squareup.retrofit2:retrofit:${versions.retrofitVersion}",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${versions.retrofitVersion}",
+            retrofitRxJavaAdapter: "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofitVersion}",
+            okHttp3              : "com.squareup.okhttp3:okhttp:${versions.okhttpVersion}",
+            okHttp3Logging       : "com.squareup.okhttp3:logging-interceptor:${versions.okhttpVersion}"
+    ]
+}
