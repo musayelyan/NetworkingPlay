@@ -15,9 +15,6 @@ interface ApiInterface3 {
     @GET("/quotes")
     suspend fun getQuotes(): Response<QuoteList>
 
-    @GET("/quotes")
-    suspend fun getQuotes2(): Call<QuoteList>
-
     companion object {
         var BASE_URL = "https://git.eclipse.org/r/"
 

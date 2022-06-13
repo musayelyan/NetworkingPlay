@@ -84,12 +84,16 @@ class MainActivity : AppCompatActivity() {
 
     //with coroutines example
     private fun doRetrofitWithCoroutines() {
-        val quotesApi = ApiInterface3.create()
+        //val quotesApi = ApiInterface3.create()
+
+       val quotesApi = createWebService<ApiInterface3>(createOkHttpClient(), ApiInterface3.BASE_URL)
 
         GlobalScope.launch {
             val result = quotesApi.getQuotes()
-            if (result != null) {
+            if (result.isSuccessful) {
                 Log.d("Art", "success")
+            }else{
+                Log.d("Art", "error: ${result.errorBody()?.charStream()}")
             }
         }
 
